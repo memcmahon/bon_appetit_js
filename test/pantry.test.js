@@ -1,5 +1,7 @@
 import { expect } from "chai"
 import Pantry from "../lib/pantry"
+import pry from 'pryjs'
+
 
 describe("Pantry", () => {
   describe("attributes", () => {
@@ -11,7 +13,7 @@ describe("Pantry", () => {
 
     it("has stock", () => {
       expect(pantry.stock).to.deep.equal({});
-    })
+    });
   });
 
   describe("functions", () => {
@@ -20,6 +22,17 @@ describe("Pantry", () => {
 
       it("can check if something is in the pantry", () => {
         expect(pantry.checkStock("Cheese")).to.equal(0);
+      });
+    });
+
+    describe("stock", () => {
+      const pantry = new Pantry();
+
+      it("can stock items", () => {
+        pantry.restock("Cheese", 10);
+
+
+        expect(pantry.checkStock("Cheese")).to.eq(10);
       });
     });
   });
