@@ -31,8 +31,11 @@ describe("Pantry", () => {
       it("can stock items", () => {
         pantry.restock("Cheese", 10);
 
-
         expect(pantry.checkStock("Cheese")).to.eq(10);
+
+        pantry.restock("Cheese", 20);
+
+        expect(pantry.checkStock("Cheese")).to.eq(30);
       });
     });
   });
