@@ -14,6 +14,10 @@ describe("Pantry", () => {
     it("has stock", () => {
       expect(pantry.stock).to.deep.equal({});
     });
+
+    it("has a shopping list", () => {
+      expect(pantry.shoppingList).to.deep.equal({});
+    })
   });
 
   describe("functions", () => {
